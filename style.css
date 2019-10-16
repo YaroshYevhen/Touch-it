@@ -1,3 +1,7 @@
+body {
+	width: 100%;
+	height: 1000px;
+}
 .box {
 	height:100px;
 	width:200px;
@@ -151,4 +155,38 @@ background-color: #119;
 
 .best {
 	padding-left: 15px;
+}
+
+@media (max-width: 1200px) {
+	.box {
+		width: 100px;
+		height: 50px;
+		font-size: 18px;
+	}
+	.box.active {
+		transform: translateX(120px)
+	}
+	.time {
+		width: 120px;
+		height: 60px;
+		font-size: 16px;
+		left: 65%;
+	}
+	.text {
+		width: 120px;
+		height: 60px;
+		left: 65%;
+		top: 120px;
+		font-size: 16px;
+	}
+	.records {
+		top: 70%;
+		left: 15%;
+	}
+	.win {
+		top: 40%;
+	}
+	.restart {
+		top: 55%;
+	}
 }

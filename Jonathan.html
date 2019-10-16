@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Touch it!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scable=no">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="box">touch me</div>
+<span class="text">Touch it <span class="score">10</span> times</span>
+<span class="time"><span class="seconds">12</span> seconds left</span>
+<div class="records">
+	<span class="records__title">Best time</span>
+	<span class="records__best">seconds = <span class="best"></span></span>
+</div>
+<span class="win">You win</span>
+<button class="restart">Restart</button>
+</body>
+<script>
+	let score = 0;
+	var _Seconds = $('.seconds').text(),
+  int;
+
+	$('.box').on('click', function() {
+		$(this).toggleClass('active');
+		$('body').toggleClass('white');
+		$('.text').toggleClass('blue');
+		$('.time').toggleClass('blue');
+		score++;
+		if(score === 1) {
+			int = setInterval(function() { // запускаем интервал
+	  if (_Seconds > 0) {
+	    _Seconds--; // вычитаем 1
+	    $('.seconds').text(_Seconds); // выводим получившееся значение в блок
+	  } else {
+	    clearInterval(int); // очищаем интервал, чтобы он не продолжал работу при _Seconds = 0
+	    $('.win').text('You lose').addClass('active');
+	    $('.restart').addClass('active');
+	    $('.box').hide();
+			$('.text').hide();
+			$('.time').hide();
+			$('body').removeClass('white');
+	  }
+	}, 1000);
+		}
+		if(score === 10) {
+			$('.win').text('You win').addClass('active');
+			$('.restart').addClass('active');
+			$('.box').hide();
+			$('.text').hide();
+			$('.time').hide();
+			if(($('.best').text() > (12 - _Seconds)) || !$('.best').text()) {
+				$('.best').text(12 - _Seconds);
+			}
+			score = 0;
+			clearInterval(int);
+			int = 0;
+		}
+		$('.score').text(10 - score);
+	})
+	$('.restart').on('click', function() {
+		$('.win').removeClass('active');
+		$(this).removeClass('active');
+		$('div').removeClass('active');
+		$('body').removeClass('white');
+		$('.box').show();
+		$('.text').removeClass('blue').show();
+		$('.seconds').text('12');
+		$('.time').removeClass('blue').show();
+		_Seconds = $('.seconds').text();
+		score = 0;
+		$('.score').text('10');
+	})
+
+	
+</script>
+</html>
