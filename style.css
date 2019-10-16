@@ -164,7 +164,7 @@ background-color: #119;
 		font-size: 18px;
 	}
 	.box.active {
-		transform: translateX(120px)
+		transform: translateY(200px)
 	}
 	.time {
 		width: 140px;
