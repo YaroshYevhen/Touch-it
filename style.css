@@ -1,0 +1,154 @@
+.box {
+	height:100px;
+	width:200px;
+	border-radius:20%;
+	background-color: #165;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	color: #fff;
+	font-size: 24px;
+	transition: transform .5s;
+	user-select: none;
+	cursor: pointer;
+}
+.active {
+	background-color: #119;
+	transform: translateX(500px);
+}
+body {
+background-color: #119;
+}
+.white {
+	background-color: #165;
+}
+
+.win {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 36px;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity .3s;
+	color: yellow;
+	user-select: none;
+}
+.win.active {
+	opacity: 1;
+}
+
+.text {
+	display: block;
+	font-size: 24px;
+	position: absolute;
+	left: 60%;
+	top: 5px;
+	height:100px;
+	width:200px;
+	border-radius:20%;
+	background-color: #165;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	color: #fff;
+	transition: transform 3s;
+	user-select: none;
+}
+
+.text.blue {
+	background-color: #119;
+}
+
+.time {
+	display: block;
+	font-size: 24px;
+	position: absolute;
+	left: 75%;
+	top: 5px;
+	height:100px;
+	width:200px;
+	border-radius:20%;
+	background-color: #165;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	color: #fff;
+	transition: transform 3s;
+	user-select: none;
+}
+
+.time.blue {
+	background-color: #119;
+}
+
+.seconds {
+	margin-right: 5px;
+}
+
+.restart {
+	width: 180px;
+	height: 48px;
+	background-color: #000;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 65%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity .3s, color .3s, background-color .3s;
+	cursor: pointer;
+}
+.restart:hover {
+	color: #000;
+	background-color: #fff;
+}
+.restart.active {
+	opacity: 1;
+}
+
+.score {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.records {
+	position: absolute;
+	left: 67%;
+	top: 35%;
+	width: 250px;
+	height: 150px;
+	border: 1px solid #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+.records__title {
+	width: 100%;
+	font-size: 36px;
+	line-height: 36px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: yellow;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+}
+
+.records__best {
+	align-self: flex-start;
+	font-size: 36px;
+	color: yellow;
+	padding-top: 15px;
+	padding-left: 15px;
+
+
+}
+
+.best {
+	padding-left: 15px;
+}
